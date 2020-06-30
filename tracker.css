@@ -1,0 +1,455 @@
+
+body {
+font-family: 'Poppins', sans-serif;
+background-color: #D8DDDE;
+color: #8499B1;
+font-style: italic;
+}
+
+.container {
+    position: relative;
+    display: grid;
+    grid-row-gap: 0;
+    grid-template-columns: 10fr 2fr 10fr;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+        "header header header"
+        "header-2 . spending-title"
+        "graph . spending"
+        "graph . savings-title"
+        "graph . savings"
+        "legend . .";        
+}
+
+h3{
+    color: black;
+    font-size: 20px;
+    text-decoration: underline;
+    font-style: underline;
+}
+
+h3:hover, .add:hover{
+    cursor: pointer;
+    color: #ed1c24;
+}
+
+.add{
+    color: black;
+}
+
+.add:hover{
+    cursor:pointer;
+    color: #ed1c24;
+}
+
+.error{
+    color: #ba524e;
+}
+
+
+
+.graph_spending1{
+    grid-area: graph;
+    height: 175px;
+    width: 350px;
+    position: relative;
+    margin-top: 75px;
+    margin-left: 170px;
+    background-color: #fff;
+    border-radius: 4px;
+    text-align: center;
+    padding: 20px;
+    display: none;
+
+}
+
+.graph_spending2{
+    grid-area: graph;
+    height: 175px;
+    width: 350px;
+    position: relative;
+    margin-top: 75px;
+    margin-left: 170px;
+    background-color: #fff;
+    border-radius: 4px;
+    text-align: center;
+    padding: 20px;
+    display: none;
+
+}
+
+.graph-spendingBtn1, .graph-spendingBtn2{
+    width: 80px;
+    height: 30px;
+    border-radius: 7px;
+    font-size: 0.9rem;
+    outline: none;
+    border: black solid 1px;
+    background-color: #fff;
+    cursor: pointer;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    margin: 20px;
+}
+
+.moneyCategory{
+    text-align:center;
+    color: black;
+    font-style:italic;
+}
+
+.header{
+    margin-top:-10px;
+    text-align: center;
+    grid-area: header;
+    text-decoration: underline;
+    font-size: 70px;
+    align-self: center;
+    color: #48435C;
+}
+
+.header-2{
+    grid-area: header-2;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 700px;
+    justify-content: space-between;
+}
+
+.month {
+    font-size: 60px;
+    color: #95A78D;
+}
+
+.links{
+    color: #a5a5b0;;
+    font-size: 10px;
+    padding: 5px;
+    margin-top: 50px;
+    margin-left: 175px;
+    text-align: right;
+}
+
+.link-essential:hover, .link-luxury:hover{
+    color: #8499B1;
+    cursor:pointer;
+}
+
+
+
+.i{
+    font-size: 18px;
+    color: #5d576b;
+}
+
+
+
+.graph_essentials {
+    display: grid;
+    height: 500px;
+    grid-area: graph;
+    justify-content: space-between;
+    grid-template-columns: repeat(5,1fr);
+    grid-gap: 30px;
+}
+
+.graph_luxuries{
+    height: 500px;
+    grid-area: graph;
+    justify-content: space-between;
+    display: none;
+    grid-template-columns: repeat(5,1fr);
+    grid-gap: 30px;
+}
+
+.column {
+  display:flex;
+}
+
+.bar-school, .bar-transportation, .bar-groceries, .bar-healthcare, .bar-utilities{
+    flex-wrap: nowrap;
+    flex-grow: 1;
+    align-self: flex-end;
+    border-radius: 5px;
+}
+
+.bar-diningOut, .bar-shopping, .bar-entertainment, .bar-vacation, .bar-other{
+    flex-wrap: nowrap;
+    flex-grow: 1;
+    align-self: flex-end;
+    border-radius: 5px;
+}
+
+
+.legend_essentials {
+    margin-top: -70px;
+    height: 60px;
+    grid-area: legend;
+    border-top: 2.5px solid #5a5966;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 30px;
+    grid-template-areas:
+    "icon icon icon icon icon";
+}
+
+.legend_luxuries{
+    margin-top: -70px;
+    height: 60px;
+    grid-area: legend;
+    border-top: 2.5px solid #5a5966;
+    display: none;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 30px;
+    grid-template-areas:
+    "icon icon icon icon icon";
+
+}
+
+.title-school, .title-transportation, .title-groceries, .title-healthcare, .title-utilities {
+    font-size:18px; 
+    font-style: italic; color: black; 
+    display: none;
+}
+
+.title-diningOut, .title-shopping, .title-entertainment, .title-vacation, .title-other {
+    font-size:18px; 
+    font-style: italic; color: black; 
+    display: none;
+}
+
+.icon{
+    display: icon;
+    text-align: center;
+    font-size: 23px;
+    color: #a5a5b0;
+    cursor: pointer;
+}
+
+#school:hover{
+    color: #f2a65a;
+}
+
+#transportation:hover{
+    color: #34435e;
+
+}
+
+#groceries:hover{
+    color: #667761;
+}
+
+#healthcare:hover{
+    color:#dd614a;
+
+}
+
+#utilities:hover{
+    color: #a7bed3;
+}
+
+#diningOut:hover{
+    color: #eb4034;
+}
+
+#shopping:hover{
+    color: #7f6a85;
+
+}
+
+#entertainment:hover{
+    color: #439c94;
+}
+
+#vacation:hover{
+    color: #e8cd74;
+
+}
+
+#other:hover{
+    color: #dbc1c1;
+}
+
+
+.spending-title {
+    margin-top: 50px;
+    grid-area: spending-title;
+    height: 100px;
+    font-size: 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.spending {
+    margin-top: -50px;
+    grid-area: spending;
+    color: black;
+    font-size: 70px;   
+}
+
+.savings-title{
+    grid-area: savings-title;
+    height: 100px;
+    font-size: 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.savings{
+    margin-top: -100px;
+    grid-area: savings;
+    color: black;
+    font-size: 70px;
+}
+
+ .bg-modal2, .bg-modal3{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    
+}
+
+ .modal-content2, .modal-content3{
+    width: 500px;
+    height: 300px;
+    background-color: white;
+    border-radius: 4px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+
+}
+
+input{
+    margin-top: 200px;
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    border: none;
+    background: none;
+    padding: 0.5rem 0.7rem;
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    color: #555;
+}
+
+.spendingMoney, .savingsMoney{
+    margin-top: 30px;
+    width: 50%;
+    display: block;
+    border: none;
+    background: none;
+    padding: 0.5rem 0.7rem;
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    color: #555;
+    text-align: center;
+
+}
+
+ .close2, .close3, .close4, .close5{
+    position: absolute;
+    top: 0;
+    right: 14px;
+    font-size: 25px;
+    color: black;
+    cursor: pointer;
+}
+
+
+.button{
+    width: 175px;
+    height: 50px;
+    border-radius: 7px;
+    font-size: 1.2rem;
+    outline: none;
+    border: 1px solid black;
+    background-color: #fff;
+    cursor: pointer;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    margin: 35px;
+
+}
+
+#popup1, #popup2, #popup3{
+    color: #a5a5b0;
+    cursor: pointer;
+}
+
+#popup1:hover, #popup2:hover, #popup3:hover{
+    color: #ed1c24;
+}
+
+@media screen and (max-width: 900px)
+{
+    .container{
+        grid-template-columns: repeat(10,1fr);
+        grid-template-areas:
+        "header"
+        "header-2"
+        "graph"
+        "graph"
+        "graph"
+        "legend"
+        "spending-title"
+        "spending"
+        "savings-title"
+        "savings";
+
+    }
+
+    .header-2{
+        margin-top: 25px;
+    }
+
+    .links{
+        text-align: left;
+        margin-right: 50px;
+        margin-top: 80px;
+    }
+
+
+    .modal-content2, .modal-content3{
+        position: fixed;
+        margin-top: -2000px;
+    }
+
+    .legend_essentials, .legend_luxuries{
+        margin-top: -415px;
+    }
+
+    .spending-title{
+        margin-top: -600px;
+        margin-left: 160px;
+    }
+
+    .spending{
+        margin-top: -500px;
+        text-align: center;
+    }
+
+    .savings-title{
+        margin-top: -400px;
+        margin-left: 160px;
+    }
+
+    .savings{
+        margin-top: -300px;
+        text-align: center;
+    } 
+}
+
+
+
+

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="tracker.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    </head>
+    <body class="container">
+
+        <h1 class="header">expense tracker</h1>
+
+        <div class="header-2"> </div>
+        
+        <!--Allows user to log their spending/purchases for each category displayed on the essential spending graph-->
+        <div class="graph_spending1">
+
+            <div class="close4">
+                <i class="fas fa-times"></i>
+            </div>
+
+            <h2 style="color: black; font-size: 20px;">Enter the amount you spent: </h2>   
+            <input type="text" id="money1" placeholder="Spent">
+            <button onclick="addGraph1(); return false;" class="graph-spendingBtn1" type="submit">Add</button>
+
+        </div>
+        
+        <!--Allows user to log their spending/purchases for each category displayed on the luxury spending graph-->
+        <div class="graph_spending2">
+
+            <div class="close5">
+                <i class="fas fa-times"></i>
+            </div>
+
+            <h2 style="color: black; font-size: 20px;">Enter the amount you spent: </h2>        
+            <input type="text" id="money2" placeholder="Spent">
+            <button onclick="addGraph2(); return false;" class="graph-spendingBtn2" type="submit">Add</button>
+
+        </div>
+            
+    
+        <div class="spending-title">
+
+            <h2 >Spending Money</h2>
+
+            <div class="i">
+                <i id="popup2" class="fas fa-plus"></i>
+            </div>
+
+        </div>
+
+        <div class="savings-title">
+
+            <h2>Savings Money</h2>
+
+            <div class="i">
+                <i id="popup3" class="fas fa-plus"></i>
+            </div>
+
+        </div>
+
+        <!--A popup that allows the user to enter amount of money used for spending-->
+        <div class="bg-modal2">
+
+            <div class="modal-content2">
+
+                <div class="close2">
+                    <i class="fas fa-times"></i> 
+                </div>
+
+                <h2 class="add" onclick="originalSpending();return false;"> Add additional spending money here: </h2>
+                <h3 onclick="transferToSavings(); return false;">transfer money to savings</h3>
+                
+                <input class="spendingMoney" type="text" placeholder="Spending Money" required>
+                <button onclick="spendingAmount(); return false;" class="button" type="submit" value="Add">Add</button>     
+
+            </div>
+
+        </div>
+
+        <!--A popup that allows the user to enter the amount of money stored in their savings-->
+        <div class="bg-modal3">
+
+            <div class="modal-content3">
+
+                <div class="close3">
+                    <i class="fas fa-times"></i> 
+                </div>
+
+                <h2 class="add" onclick="originalSavings();return false;"> Add Money to your Savings Here: </h2>
+                <h3 onclick="transferToSpending(); return false;">transfer money to spending</h3>
+
+                <input class="savingsMoney" type="text" placeholder="Savings Money" required>
+                <button onclick="savingAmount(); return false;" class="button" type="submit" value="Add">Add</button>
+                                       
+            </div>
+
+        </div>
+
+        
+        <!--Creates the columns for each category displayed on the essential spending graph-->
+        <div class="graph_essentials">
+
+            <div class="column"><div class="bar-school"></div></div>
+            <div class="column"><div class="bar-transportation"></div></div>
+            <div class="column"><div class="bar-groceries"></div></div>
+            <div class="column"><div class="bar-healthcare"></div></div>
+            <div class="column"><div class="bar-utilities"></div></div>
+            
+        </div>
+
+        <!--The x-axis of the essential spending graph. Displays icons corresponding to each category-->
+        <div class="legend_essentials">
+
+            <div class="icon" > <i id="school" class="fas fa-school"> </i> <h2 class="title-school">school</h2> </div>
+            <div class="icon" > <i id="transportation" class="fas fa-car"></i> <h2 class="title-transportation">transportation</h2> </div>
+            <div class="icon" > <i id="groceries" class="fas fa-shopping-basket">  </i> <h2 class="title-groceries">groceries</h2> </div>
+            <div class="icon"> <i id="healthcare" class="fas fa-hospital-user"></i> <h2 class="title-healthcare">healthcare</h2> </div>
+            <div class="icon" > <i  id="utilities" class="fas fa-bolt"></i> <h2 class="title-utilities">rent/utilities</h2> </div>
+               
+        </div>
+
+        <!--Creates the columns for each category displayed on the luxury spending graph-->
+        <div class="graph_luxuries">
+
+            <div class="column"><div class="bar-diningOut"></div></div>
+            <div class="column"><div class="bar-shopping"></div></div>
+            <div class="column"><div class="bar-entertainment"></div></div>
+            <div class="column"><div class="bar-vacation"></div></div>
+            <div class="column"><div class="bar-other"></div></div>
+            
+        </div>
+
+        <!--The x-axis of the luxury spending graph. Displays icons corresponding to each category-->
+        <div class="legend_luxuries">
+
+            <div class="icon" > <i id="diningOut" class="fas fa-utensils"></i> <h2 class="title-diningOut">dining out</h2> </div>
+            <div class="icon" > <i id="shopping" class="fas fa-shopping-cart"></i> <h2 class="title-shopping">shopping</h2> </div>
+            <div class="icon" > <i id="entertainment"class="fas fa-tv"> </i> <h2 class="title-entertainment">entertainment</h2> </div>
+            <div class="icon"> <i id="vacation" class="fas fa-plane-departure"></i> <h2 class="title-vacation">vacation</h2> </div> 
+            <div class="icon"><i id="other"class="fas fa-exclamation-circle"></i><h2 class="title-other">other</div>
+
+        </div>
+  
+        <script type="text/javascript" src="tracker.js"></script>
+    </body>
+</html>
